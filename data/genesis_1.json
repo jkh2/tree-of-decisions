@@ -147,7 +147,7 @@
               "type": "divine",
               "decision": "God blesses them: Be fruitful and multiply, fill the earth, subdue it, have dominion",
               "immediate_fruit": "Humanity is commissioned — not just blessed to multiply but given authority to steward creation",
-              "long_term_fruit": "All of human history; stewardship and dominion become the framework for every human decision that follows",
+              "long_term_fruit": "All of human history; stewardship and dominion become the framework for every human decision that follows — and the authority Adam fails to exercise: the serpent is a creature over which Adam had already been given dominion (Gen 1:28); his silence in Genesis 3 is not merely disobedience, it is an abdication of authority he already held",
               "children": []
             },
             {
@@ -159,6 +159,144 @@
               "immediate_fruit": "Provision established — no scarcity in the original design",
               "long_term_fruit": "The original diet; the context against which the forbidden tree will be placed; abundance as the baseline",
               "children": []
+            },
+            {
+              "id": "gen2_formation",
+              "label": "God forms man from dust, breathes life",
+              "reference": "Genesis 2:7",
+              "type": "divine",
+              "decision": "God forms man from the dust of the ground and breathes into his nostrils the breath of life",
+              "immediate_fruit": "Adam becomes a living soul — a being of both dust and divine breath; the first creature animated by God's direct breath",
+              "long_term_fruit": "The tension between dust-nature and Spirit-breath runs through all of Scripture; resurrection restores both; 'dust you are and to dust you shall return' (Gen 3:19) is the reversal of this act",
+              "children": [
+                {
+                  "id": "gen2_garden",
+                  "label": "God plants Eden; places man in it",
+                  "reference": "Genesis 2:8",
+                  "type": "divine",
+                  "decision": "God plants a garden in Eden and places the man He formed in it",
+                  "immediate_fruit": "Man has a home prepared for him — a place of beauty and provision before he can ask for one",
+                  "long_term_fruit": "Eden as the original template for the Promised Land, the Tabernacle, the Temple, the New Jerusalem; garden as sacred meeting-place throughout Scripture",
+                  "children": [
+                    {
+                      "id": "gen2_trees",
+                      "label": "Tree of Life + Tree of Knowledge planted",
+                      "reference": "Genesis 2:9",
+                      "type": "divine",
+                      "decision": "God makes every beautiful and edible tree grow in the garden, including the Tree of Life and the Tree of the Knowledge of Good and Evil",
+                      "immediate_fruit": "The garden is a place of abundance; but two special trees introduce meaning, choice, and consequence into the landscape",
+                      "long_term_fruit": "The Tree of Life reappears in Revelation 22 — its access restored to those who overcome; the Tree of Knowledge becomes the site of the first test of trust",
+                      "children": []
+                    },
+                    {
+                      "id": "gen2_vocation",
+                      "label": "Man placed to work and keep the garden",
+                      "reference": "Genesis 2:15",
+                      "type": "divine",
+                      "decision": "God places man in the garden with a vocation: to work it and keep it",
+                      "immediate_fruit": "Work is established as holy before the fall — man has dignity and purpose through labor, not merely through existence",
+                      "long_term_fruit": "The theology of vocation; work as worship; stewardship as the human calling; the fall will curse the ground but not abolish work — labor remains, now with friction",
+                      "children": [
+                        {
+                          "id": "gen2_command",
+                          "label": "First Command: Do not eat the tree of knowledge",
+                          "reference": "Genesis 2:16–17",
+                          "type": "command",
+                          "decision": "God commands man: every tree of the garden is freely given, but the Tree of the Knowledge of Good and Evil must not be eaten",
+                          "immediate_fruit": "A boundary is established within abundance — man has freedom and full provision, with one restraint that is also an act of trust",
+                          "long_term_fruit": "The foundational structure of all covenant: command + promise for obedience + consequence for disobedience; the Mosaic covenant follows this same architecture; the New Covenant resolves what this moment breaks",
+                          "children": [
+                            {
+                              "id": "gen2_promise_life",
+                              "label": "Promise: every tree freely given",
+                              "reference": "Genesis 2:16",
+                              "type": "promise-good",
+                              "decision": "God grants free access to every tree of the garden — including the Tree of Life — as the provision for living within the covenant boundary",
+                              "immediate_fruit": "Abundance is the baseline; the restriction is one tree out of every tree; obedience preserves ongoing access to life itself",
+                              "long_term_fruit": "The Tree of Life access is closed after the fall (Gen 3:24); restoration of that access becomes the eschatological promise (Revelation 22:2, 14)",
+                              "children": []
+                            },
+                            {
+                              "id": "gen2_promise_death",
+                              "label": "Warning: you shall surely die",
+                              "reference": "Genesis 2:17",
+                              "type": "promise-warn",
+                              "decision": "God declares the consequence for eating the forbidden tree: 'in the day that thou eatest thereof thou shalt surely die'",
+                              "immediate_fruit": "Death is named as a real possibility — something not part of the original creation now stands as the consequence of broken trust",
+                              "long_term_fruit": "The death that follows in Genesis 3 is both immediate (spiritual separation from God) and eventual (physical); Paul's argument in Romans 5–6 rests entirely on this moment; 'the wages of sin is death'",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "gen2_alone",
+                  "label": "It is not good for man to be alone",
+                  "reference": "Genesis 2:18",
+                  "type": "divine",
+                  "decision": "God declares that man's aloneness is 'not good' and decides to make a suitable helper for him",
+                  "immediate_fruit": "The first time God names something 'not good' — incompleteness is recognized and the decision to remedy it is made before the remedy exists",
+                  "long_term_fruit": "The theology of human community; marriage as God's design for completeness; the church as the community that mirrors this; Christ who will not leave His people as orphans",
+                  "children": [
+                    {
+                      "id": "gen2_brings_animals",
+                      "label": "God brings animals to Adam to name",
+                      "reference": "Genesis 2:19",
+                      "type": "divine",
+                      "decision": "God forms animals and brings them to Adam to see what he would call them — and whatever Adam called each creature, that was its name",
+                      "immediate_fruit": "God creates deliberate space for human agency and ratifies the result: Adam's naming is honored",
+                      "long_term_fruit": "Language as a distinctly human vocation; taxonomy and natural science as extensions of this act; the pattern of God-initiates, human-responds throughout covenant history",
+                      "children": [
+                        {
+                          "id": "gen2_adam_names_animals",
+                          "label": "Adam names all creatures",
+                          "reference": "Genesis 2:20",
+                          "type": "human",
+                          "decision": "Adam names every living creature, exercising the stewardship mandate — and finds that none of them is a suitable partner for him",
+                          "immediate_fruit": "Every animal has a name; Adam's dominion over creation is expressed through language; his aloneness is confirmed more acutely by the search itself",
+                          "long_term_fruit": "The first human decision God explicitly honors in Scripture; naming as an act of knowing and relating; the theology of language as a distinctly human gift rooted in the image of God",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "gen2_woman",
+                      "label": "God builds woman from Adam's side",
+                      "reference": "Genesis 2:21–22",
+                      "type": "divine",
+                      "decision": "God causes Adam to sleep, takes from his side, and builds the woman — then brings her to Adam",
+                      "immediate_fruit": "Woman exists — not formed from dust separately but from Adam's own body; 'built' (Hebrew: bnh — the word used for temples and cities) rather than merely formed",
+                      "long_term_fruit": "The indissoluble unity of man and woman; 'bone of my bones'; Ephesians 5 (the marriage mystery pointing to Christ and His church); Christ's side pierced at the cross — from which His bride is built",
+                      "children": [
+                        {
+                          "id": "gen2_adam_receives_woman",
+                          "label": "Adam names and receives the woman",
+                          "reference": "Genesis 2:23",
+                          "type": "human",
+                          "decision": "Adam recognizes the woman as 'bone of my bones and flesh of my flesh' and names her Woman — because she was taken from Man",
+                          "immediate_fruit": "The first recorded human speech in Scripture — and it is a covenant declaration of recognition, not a command or complaint",
+                          "long_term_fruit": "Marriage covenant as mutual recognition and naming; Adam's faithfulness here is the foil for his silence in Genesis 3; the second Adam (Christ) will not remain silent when His bride is threatened",
+                          "children": [
+                            {
+                              "id": "gen2_marriage",
+                              "label": "God's decree: leave, cleave, one flesh",
+                              "reference": "Genesis 2:24",
+                              "type": "divine",
+                              "decision": "God declares the institution of marriage: a man shall leave his father and mother, cleave to his wife, and they shall become one flesh",
+                              "immediate_fruit": "Marriage is established as the covenant of leaving and uniting — a new primary loyalty formed from the original unity",
+                              "long_term_fruit": "Every marriage in human history; Jesus quotes this in Matthew 19 when challenged on divorce; Paul calls it a mystery pointing to Christ and the church (Ephesians 5:31–32)",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
