@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree of Decisions</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0f;
+      color: #e8e0d0;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px;
+      background: rgba(10, 10, 15, 0.9);
+      border-bottom: 1px solid #2a2a3a;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    #header h1 {
+      font-size: 18px;
+      color: #f0c060;
+      letter-spacing: 0.05em;
+    }
+
+    #header .subtitle {
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+    }
+
+    #dataset-select {
+      margin-left: auto;
+      background: #1a1a2a;
+      border: 1px solid #3a3a5a;
+      color: #e8e0d0;
+      padding: 4px 10px;
+      font-size: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #canvas {
+      width: 100vw;
+      height: 100vh;
+      padding-top: 48px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .link {
+      fill: none;
+      stroke: #3a3a4a;
+      stroke-width: 1.5px;
+    }
+
+    .node circle {
+      stroke-width: 2px;
+      cursor: pointer;
+      transition: r 0.2s;
+    }
+
+    .node.divine circle {
+      fill: #c8960a;
+      stroke: #f0c060;
+    }
+
+    .node.divine.collapsed circle {
+      fill: #8a6a00;
+      stroke: #c8960a;
+    }
+
+    .node.human circle {
+      fill: #2a6a8a;
+      stroke: #4aaccc;
+    }
+
+    .node.human.collapsed circle {
+      fill: #1a4a6a;
+      stroke: #2a6a8a;
+    }
+
+    .node.blessing circle {
+      fill: #6a3a8a;
+      stroke: #aa60cc;
+    }
+
+    .node text {
+      font-size: 11px;
+      fill: #e8e0d0;
+      pointer-events: none;
+      text-anchor: middle;
+    }
+
+    .node text.label {
+      font-weight: bold;
+    }
+
+    .node text.ref {
+      fill: #888;
+      font-size: 9px;
+      font-style: italic;
+    }
+
+    /* Tooltip */
+    #tooltip {
+      position: fixed;
+      background: #12121e;
+      border: 1px solid #3a3a5a;
+      border-radius: 6px;
+      padding: 14px 16px;
+      max-width: 340px;
+      font-size: 13px;
+      line-height: 1.6;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 200;
+    }
+
+    #tooltip .t-ref {
+      font-size: 11px;
+      color: #f0c060;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    #tooltip .t-decision {
+      color: #e8e0d0;
+      margin-bottom: 8px;
+    }
+
+    #tooltip .t-section {
+      font-size: 11px;
+      color: #aaa;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    #tooltip .t-fruit {
+      color: #c8d8b0;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    #tooltip .t-longfruit {
+      color: #b0c0d8;
+      font-size: 12px;
+    }
+
+    /* Legend */
+    #legend {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(10, 10, 15, 0.85);
+      border: 1px solid #2a2a3a;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12px;
+      z-index: 100;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-dot.divine { background: #c8960a; border: 2px solid #f0c060; }
+    .legend-dot.human  { background: #2a6a8a; border: 2px solid #4aaccc; }
+    .legend-dot.blessing { background: #6a3a8a; border: 2px solid #aa60cc; }
+
+    #hint {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      font-size: 11px;
+      color: #555;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Tree of Decisions</h1>
+  <span class="subtitle">God's decisions and their fruit through Scripture</span>
+  <select id="dataset-select">
+    <option value="data/genesis_1.json">Genesis 1 — The Creation Week</option>
+  </select>
+</div>
+
+<div id="canvas"></div>
+
+<div id="tooltip"></div>
+
+<div id="legend">
+  <div class="legend-item"><div class="legend-dot divine"></div> God's decision</div>
+  <div class="legend-item"><div class="legend-dot blessing"></div> Blessing / Commission</div>
+  <div class="legend-item"><div class="legend-dot human"></div> Human decision</div>
+</div>
+
+<div id="hint">
+  Hover to read · Click to expand/collapse · Scroll to zoom · Drag to pan
+</div>
+
+<script>
+const width  = window.innerWidth;
+const height = window.innerHeight - 48;
+const nodeR  = 10;
+
+const svg = d3.select('#canvas')
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height);
+
+const g = svg.append('g');
+
+// Zoom + pan
+svg.call(
+  d3.zoom()
+    .scaleExtent([0.15, 3])
+    .on('zoom', e => g.attr('transform', e.transform))
+);
+
+const tooltip = d3.select('#tooltip');
+
+let root;
+
+function nodeClass(d) {
+  if (d.data.label && d.data.label.toLowerCase().includes('blessing')) return 'blessing';
+  return d.data.type || 'divine';
+}
+
+function showTooltip(event, d) {
+  const data = d.data;
+  tooltip
+    .style('opacity', 1)
+    .html(`
+      <div class="t-ref">${data.reference || ''}</div>
+      <div class="t-decision">${data.decision || data.label}</div>
+      ${data.immediate_fruit ? `<div class="t-section">Immediate Fruit</div><div class="t-fruit">${data.immediate_fruit}</div>` : ''}
+      ${data.long_term_fruit ? `<div class="t-section">Long-term Fruit</div><div class="t-longfruit">${data.long_term_fruit}</div>` : ''}
+    `);
+  moveTooltip(event);
+}
+
+function moveTooltip(event) {
+  const x = event.clientX + 16;
+  const y = event.clientY - 10;
+  const tw = 360;
+  tooltip
+    .style('left', (x + tw > window.innerWidth ? x - tw - 32 : x) + 'px')
+    .style('top', Math.max(60, y) + 'px');
+}
+
+function hideTooltip() {
+  tooltip.style('opacity', 0);
+}
+
+function diagonal(s, d) {
+  // Curved link: from parent (d) to child (s), growing upward
+  return `M ${s.x} ${s.y}
+          C ${s.x} ${(s.y + d.y) / 2},
+            ${d.x} ${(s.y + d.y) / 2},
+            ${d.x} ${d.y}`;
+}
+
+function update(source) {
+  const treeLayout = d3.tree().nodeSize([52, 130]);
+  treeLayout(root);
+
+  // Invert y so tree grows upward
+  root.each(d => { d.y = -d.depth * 130; });
+
+  const nodes = root.descendants();
+  const links = root.links();
+
+  // Center horizontally
+  const xs = nodes.map(d => d.x);
+  const centerX = (Math.max(...xs) + Math.min(...xs)) / 2;
+  const startX = width / 2 - centerX;
+  const startY = height * 0.85;
+
+  // Links
+  const link = g.selectAll('.link')
+    .data(links, d => d.target.data.id);
+
+  link.enter()
+    .insert('path', '.node')
+    .attr('class', 'link')
+    .attr('d', d => {
+      const o = { x: source.x0 + startX, y: source.y0 + startY };
+      return diagonal({ x: o.x, y: o.y }, { x: o.x, y: o.y });
+    })
+    .merge(link)
+    .transition().duration(400)
+    .attr('d', d => diagonal(
+      { x: d.target.x + startX, y: d.target.y + startY },
+      { x: d.source.x + startX, y: d.source.y + startY }
+    ));
+
+  link.exit().transition().duration(400)
+    .attr('d', d => {
+      const o = { x: source.x + startX, y: source.y + startY };
+      return diagonal({ x: o.x, y: o.y }, { x: o.x, y: o.y });
+    })
+    .remove();
+
+  // Nodes
+  const node = g.selectAll('.node')
+    .data(nodes, d => d.data.id);
+
+  const nodeEnter = node.enter()
+    .append('g')
+    .attr('class', d => `node ${nodeClass(d)} ${d._children ? 'collapsed' : ''}`)
+    .attr('transform', `translate(${source.x0 + startX},${source.y0 + startY})`)
+    .on('click', (event, d) => {
+      if (d.children) { d._children = d.children; d.children = null; }
+      else if (d._children) { d.children = d._children; d._children = null; }
+      update(d);
+    })
+    .on('mouseover', (event, d) => showTooltip(event, d))
+    .on('mousemove', moveTooltip)
+    .on('mouseout', hideTooltip);
+
+  nodeEnter.append('circle').attr('r', nodeR);
+
+  nodeEnter.append('text')
+    .attr('class', 'label')
+    .attr('y', -18)
+    .text(d => d.data.label);
+
+  nodeEnter.append('text')
+    .attr('class', 'ref')
+    .attr('y', -7)
+    .text(d => d.data.reference || '');
+
+  const nodeUpdate = nodeEnter.merge(node);
+
+  nodeUpdate.transition().duration(400)
+    .attr('transform', d => `translate(${d.x + startX},${d.y + startY})`)
+    .attr('class', d => `node ${nodeClass(d)} ${d._children ? 'collapsed' : ''}`);
+
+  node.exit().transition().duration(400)
+    .attr('transform', `translate(${source.x + startX},${source.y + startY})`)
+    .remove();
+
+  // Save positions for animation origin
+  nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+}
+
+function loadDataset(url) {
+  d3.json(url).then(data => {
+    root = d3.hierarchy(data);
+    root.x0 = width / 2;
+    root.y0 = height * 0.85;
+    // Start with all nodes expanded
+    root.each(d => {
+      d._children = null;
+    });
+    g.selectAll('*').remove();
+    update(root);
+  });
+}
+
+document.getElementById('dataset-select').addEventListener('change', e => {
+  loadDataset(e.target.value);
+});
+
+loadDataset('data/genesis_1.json');
+</script>
+</body>
+</html>
