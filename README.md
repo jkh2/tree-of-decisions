@@ -22,7 +22,7 @@ Our first mapping project is the entire Bible — worked through passage by pass
 
 ## Progress
 
-**59 nodes mapped across Genesis 1–4**
+**76 nodes mapped across Genesis 1–7**
 
 | Chapter | Scope | Nodes | Status |
 |---------|-------|-------|--------|
@@ -30,7 +30,10 @@ Our first mapping project is the entire Bible — worked through passage by pass
 | Genesis 2 | Garden, vocation, first command, woman, marriage covenant | 18 | ✅ Complete |
 | Genesis 3 | Serpent, the Fall, judgments, Protoevangelium, garments, banishment | 15 | ✅ Complete |
 | Genesis 4 | Cain and Abel, God's warning, murder, pursuit, mercy on Cain, Seth, first worship | 13 | ✅ Complete |
-| Genesis 5–9 | Genealogies, Noah, the Flood | — | 🔜 Next |
+| Genesis 5 | Image persists in Seth's line, death refrain, Enoch translated, Noah named | 4 | ✅ Complete |
+| Genesis 6 | Corruption total, God grieves, flood decree, Noah's grace, ark instructions, obedience | 8 | ✅ Complete |
+| Genesis 7 | Come into the ark, uncreation, all flesh died, Noah remains, 150 days | 5 | ✅ Complete |
+| Genesis 8–9 | Waters recede, raven/dove, altar, Noahic covenant | — | 🔜 Next |
 
 **Node types in use:**
 - 🟡 Gold — God's decisions
