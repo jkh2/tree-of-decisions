@@ -18,9 +18,7 @@
 
     #header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       padding: 12px 20px;
       background: rgba(10, 10, 15, 0.9);
       border-bottom: 1px solid #2a2a3a;
@@ -30,17 +28,8 @@
       gap: 16px;
     }
 
-    #header h1 {
-      font-size: 18px;
-      color: #f0c060;
-      letter-spacing: 0.05em;
-    }
-
-    #header .subtitle {
-      font-size: 13px;
-      color: #888;
-      font-style: italic;
-    }
+    #header h1 { font-size: 18px; color: #f0c060; letter-spacing: 0.05em; }
+    #header .subtitle { font-size: 13px; color: #888; font-style: italic; }
 
     #dataset-select {
       margin-left: auto;
@@ -53,16 +42,8 @@
       cursor: pointer;
     }
 
-    #canvas {
-      width: 100vw;
-      height: 100vh;
-      padding-top: 48px;
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
+    #canvas { width: 100vw; height: 100vh; padding-top: 48px; }
+    svg { width: 100%; height: 100%; }
 
     .link {
       fill: none;
@@ -72,34 +53,22 @@
 
     .node circle {
       stroke-width: 2px;
-      cursor: pointer;
-      transition: r 0.2s;
+      cursor: grab;
+      transition: r 0.15s;
     }
 
-    .node.divine circle {
-      fill: #c8960a;
-      stroke: #f0c060;
-    }
+    .node circle:active { cursor: grabbing; }
 
-    .node.divine.collapsed circle {
-      fill: #8a6a00;
-      stroke: #c8960a;
-    }
+    .node.divine circle       { fill: #c8960a; stroke: #f0c060; }
+    .node.divine.collapsed circle { fill: #8a6a00; stroke: #c8960a; }
 
-    .node.human circle {
-      fill: #2a6a8a;
-      stroke: #4aaccc;
-    }
+    .node.human circle        { fill: #2a6a8a; stroke: #4aaccc; }
+    .node.human.collapsed circle { fill: #1a4a6a; stroke: #2a6a8a; }
 
-    .node.human.collapsed circle {
-      fill: #1a4a6a;
-      stroke: #2a6a8a;
-    }
-
-    .node.blessing circle {
-      fill: #6a3a8a;
-      stroke: #aa60cc;
-    }
+    .node.blessing circle     { fill: #6a3a8a; stroke: #aa60cc; }
+    .node.command circle      { fill: #2a7a3a; stroke: #60cc80; }
+    .node.promise-good circle { fill: #1a5a5a; stroke: #40bbbb; }
+    .node.promise-warn circle { fill: #7a3a1a; stroke: #cc7040; }
 
     .node text {
       font-size: 11px;
@@ -108,15 +77,8 @@
       text-anchor: middle;
     }
 
-    .node text.label {
-      font-weight: bold;
-    }
-
-    .node text.ref {
-      fill: #888;
-      font-size: 9px;
-      font-style: italic;
-    }
+    .node text.label { font-weight: bold; }
+    .node text.ref   { fill: #888; font-size: 9px; font-style: italic; }
 
     /* Tooltip */
     #tooltip {
@@ -125,7 +87,7 @@
       border: 1px solid #3a3a5a;
       border-radius: 6px;
       padding: 14px 16px;
-      max-width: 340px;
+      max-width: 360px;
       font-size: 13px;
       line-height: 1.6;
       pointer-events: none;
@@ -134,42 +96,17 @@
       z-index: 200;
     }
 
-    #tooltip .t-ref {
-      font-size: 11px;
-      color: #f0c060;
-      font-style: italic;
-      margin-bottom: 6px;
-    }
-
-    #tooltip .t-decision {
-      color: #e8e0d0;
-      margin-bottom: 8px;
-    }
-
-    #tooltip .t-section {
-      font-size: 11px;
-      color: #aaa;
-      margin-bottom: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    #tooltip .t-fruit {
-      color: #c8d8b0;
-      margin-bottom: 6px;
-      font-size: 12px;
-    }
-
-    #tooltip .t-longfruit {
-      color: #b0c0d8;
-      font-size: 12px;
-    }
+    #tooltip .t-ref      { font-size: 11px; color: #f0c060; font-style: italic; margin-bottom: 6px; }
+    #tooltip .t-decision { color: #e8e0d0; margin-bottom: 8px; }
+    #tooltip .t-section  { font-size: 11px; color: #aaa; margin-bottom: 2px;
+                           text-transform: uppercase; letter-spacing: 0.08em; }
+    #tooltip .t-fruit    { color: #c8d8b0; margin-bottom: 6px; font-size: 12px; }
+    #tooltip .t-longfruit{ color: #b0c0d8; font-size: 12px; }
 
     /* Legend */
     #legend {
       position: fixed;
-      bottom: 16px;
-      left: 16px;
+      bottom: 16px; left: 16px;
       background: rgba(10, 10, 15, 0.85);
       border: 1px solid #2a2a3a;
       border-radius: 6px;
@@ -178,31 +115,38 @@
       z-index: 100;
     }
 
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
+    .legend-section {
+      font-size: 10px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 6px 0 3px;
     }
 
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+
     .legend-dot {
-      width: 12px;
-      height: 12px;
+      width: 12px; height: 12px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
-    .legend-dot.divine { background: #c8960a; border: 2px solid #f0c060; }
-    .legend-dot.human  { background: #2a6a8a; border: 2px solid #4aaccc; }
-    .legend-dot.blessing { background: #6a3a8a; border: 2px solid #aa60cc; }
+    .legend-dot.divine       { background: #c8960a; border: 2px solid #f0c060; }
+    .legend-dot.blessing     { background: #6a3a8a; border: 2px solid #aa60cc; }
+    .legend-dot.human        { background: #2a6a8a; border: 2px solid #4aaccc; }
+    .legend-dot.command      { background: #2a7a3a; border: 2px solid #60cc80; }
+    .legend-dot.promise-good { background: #1a5a5a; border: 2px solid #40bbbb; }
+    .legend-dot.promise-warn { background: #7a3a1a; border: 2px solid #cc7040; }
+
+    .legend-item.future { opacity: 0.45; }
 
     #hint {
       position: fixed;
-      bottom: 16px;
-      right: 16px;
+      bottom: 16px; right: 16px;
       font-size: 11px;
       color: #555;
       text-align: right;
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -217,23 +161,46 @@
 </div>
 
 <div id="canvas"></div>
-
 <div id="tooltip"></div>
 
 <div id="legend">
-  <div class="legend-item"><div class="legend-dot divine"></div> God's decision</div>
+  <div class="legend-section">God's acts</div>
+  <div class="legend-item"><div class="legend-dot divine"></div> Sovereign decision</div>
   <div class="legend-item"><div class="legend-dot blessing"></div> Blessing / Commission</div>
-  <div class="legend-item"><div class="legend-dot human"></div> Human decision</div>
+  <div class="legend-section">Covenant (Genesis 2+)</div>
+  <div class="legend-item future"><div class="legend-dot command"></div> Command to humans</div>
+  <div class="legend-item future"><div class="legend-dot promise-good"></div> Promise for obedience</div>
+  <div class="legend-item future"><div class="legend-dot promise-warn"></div> Warning / consequence</div>
+  <div class="legend-section">Human</div>
+  <div class="legend-item future"><div class="legend-dot human"></div> Human decision</div>
 </div>
 
 <div id="hint">
-  Hover to read · Click to expand/collapse · Scroll to zoom · Drag to pan
+  Hover node — read the fruit<br>
+  Click node — expand / collapse<br>
+  Drag node — reposition<br>
+  Scroll — zoom · Drag background — pan
 </div>
 
 <script>
 const width  = window.innerWidth;
 const height = window.innerHeight - 48;
 const nodeR  = 10;
+
+// Module-level layout state so drag can access it
+let currentStartX = width / 2;
+let currentStartY = height * 0.85;
+
+// Per-node drag offsets (cleared on expand/collapse)
+const dragOffsets = {};
+
+function getPos(d) {
+  const off = dragOffsets[d.data.id] || {x: 0, y: 0};
+  return {
+    x: d.x + currentStartX + off.x,
+    y: d.y + currentStartY + off.y
+  };
+}
 
 const svg = d3.select('#canvas')
   .append('svg')
@@ -242,20 +209,29 @@ const svg = d3.select('#canvas')
 
 const g = svg.append('g');
 
-// Zoom + pan
-svg.call(
-  d3.zoom()
-    .scaleExtent([0.15, 3])
-    .on('zoom', e => g.attr('transform', e.transform))
-);
+// Zoom + pan on background only
+const zoom = d3.zoom()
+  .scaleExtent([0.1, 4])
+  .on('zoom', e => g.attr('transform', e.transform));
+
+svg.call(zoom);
 
 const tooltip = d3.select('#tooltip');
 
 let root;
+let allLinks = [];
 
 function nodeClass(d) {
+  if (d.data.type === 'human') return 'human';
+  if (d.data.type === 'command') return 'command';
+  if (d.data.type === 'promise-good') return 'promise-good';
+  if (d.data.type === 'promise-warn') return 'promise-warn';
   if (d.data.label && d.data.label.toLowerCase().includes('blessing')) return 'blessing';
-  return d.data.type || 'divine';
+  return 'divine';
+}
+
+function truncate(str, max) {
+  return str && str.length > max ? str.slice(0, max - 1) + '…' : (str || '');
 }
 
 function showTooltip(event, d) {
@@ -265,8 +241,8 @@ function showTooltip(event, d) {
     .html(`
       <div class="t-ref">${data.reference || ''}</div>
       <div class="t-decision">${data.decision || data.label}</div>
-      ${data.immediate_fruit ? `<div class="t-section">Immediate Fruit</div><div class="t-fruit">${data.immediate_fruit}</div>` : ''}
-      ${data.long_term_fruit ? `<div class="t-section">Long-term Fruit</div><div class="t-longfruit">${data.long_term_fruit}</div>` : ''}
+      ${data.immediate_fruit  ? `<div class="t-section">Immediate Fruit</div><div class="t-fruit">${data.immediate_fruit}</div>` : ''}
+      ${data.long_term_fruit  ? `<div class="t-section">Long-term Fruit</div><div class="t-longfruit">${data.long_term_fruit}</div>` : ''}
     `);
   moveTooltip(event);
 }
@@ -274,76 +250,96 @@ function showTooltip(event, d) {
 function moveTooltip(event) {
   const x = event.clientX + 16;
   const y = event.clientY - 10;
-  const tw = 360;
+  const tw = 376;
   tooltip
     .style('left', (x + tw > window.innerWidth ? x - tw - 32 : x) + 'px')
     .style('top', Math.max(60, y) + 'px');
 }
 
-function hideTooltip() {
-  tooltip.style('opacity', 0);
-}
+function hideTooltip() { tooltip.style('opacity', 0); }
 
 function diagonal(s, d) {
-  // Curved link: from parent (d) to child (s), growing upward
   return `M ${s.x} ${s.y}
           C ${s.x} ${(s.y + d.y) / 2},
             ${d.x} ${(s.y + d.y) / 2},
             ${d.x} ${d.y}`;
 }
 
+function redrawLinks() {
+  g.selectAll('.link').attr('d', l =>
+    diagonal(getPos(l.target), getPos(l.source))
+  );
+}
+
+// Drag behavior for individual nodes
+const nodeDrag = d3.drag()
+  .on('start', function(event) {
+    event.sourceEvent.stopPropagation(); // don't trigger svg pan
+    hideTooltip();
+  })
+  .on('drag', function(event, d) {
+    if (!dragOffsets[d.data.id]) dragOffsets[d.data.id] = {x: 0, y: 0};
+    dragOffsets[d.data.id].x += event.dx;
+    dragOffsets[d.data.id].y += event.dy;
+    const pos = getPos(d);
+    d3.select(this).attr('transform', `translate(${pos.x},${pos.y})`);
+    redrawLinks();
+  });
+
 function update(source) {
-  const treeLayout = d3.tree().nodeSize([52, 130]);
+  const treeLayout = d3.tree().nodeSize([100, 160]);
   treeLayout(root);
 
-  // Invert y so tree grows upward
-  root.each(d => { d.y = -d.depth * 130; });
+  // Grow upward
+  root.each(d => { d.y = -d.depth * 160; });
 
   const nodes = root.descendants();
   const links = root.links();
+  allLinks = links;
 
   // Center horizontally
   const xs = nodes.map(d => d.x);
-  const centerX = (Math.max(...xs) + Math.min(...xs)) / 2;
-  const startX = width / 2 - centerX;
-  const startY = height * 0.85;
+  currentStartX = width / 2 - (Math.max(...xs) + Math.min(...xs)) / 2;
+  currentStartY = height * 0.88;
 
   // Links
-  const link = g.selectAll('.link')
-    .data(links, d => d.target.data.id);
+  const link = g.selectAll('.link').data(links, d => d.target.data.id);
 
   link.enter()
     .insert('path', '.node')
     .attr('class', 'link')
-    .attr('d', d => {
-      const o = { x: source.x0 + startX, y: source.y0 + startY };
-      return diagonal({ x: o.x, y: o.y }, { x: o.x, y: o.y });
+    .attr('d', () => {
+      const o = getPos(source);
+      return diagonal(o, o);
     })
     .merge(link)
-    .transition().duration(400)
-    .attr('d', d => diagonal(
-      { x: d.target.x + startX, y: d.target.y + startY },
-      { x: d.source.x + startX, y: d.source.y + startY }
-    ));
+    .transition().duration(350)
+    .attr('d', d => diagonal(getPos(d.target), getPos(d.source)));
 
-  link.exit().transition().duration(400)
-    .attr('d', d => {
-      const o = { x: source.x + startX, y: source.y + startY };
-      return diagonal({ x: o.x, y: o.y }, { x: o.x, y: o.y });
+  link.exit().transition().duration(350)
+    .attr('d', () => {
+      const o = getPos(source);
+      return diagonal(o, o);
     })
     .remove();
 
   // Nodes
-  const node = g.selectAll('.node')
-    .data(nodes, d => d.data.id);
+  const node = g.selectAll('.node').data(nodes, d => d.data.id);
 
   const nodeEnter = node.enter()
     .append('g')
     .attr('class', d => `node ${nodeClass(d)} ${d._children ? 'collapsed' : ''}`)
-    .attr('transform', `translate(${source.x0 + startX},${source.y0 + startY})`)
+    .attr('transform', () => {
+      const o = getPos(source);
+      return `translate(${o.x},${o.y})`;
+    })
+    .call(nodeDrag)
     .on('click', (event, d) => {
+      event.stopPropagation();
       if (d.children) { d._children = d.children; d.children = null; }
       else if (d._children) { d.children = d._children; d._children = null; }
+      // Clear all drag offsets so layout is clean after structure change
+      Object.keys(dragOffsets).forEach(k => delete dragOffsets[k]);
       update(d);
     })
     .on('mouseover', (event, d) => showTooltip(event, d))
@@ -354,43 +350,33 @@ function update(source) {
 
   nodeEnter.append('text')
     .attr('class', 'label')
-    .attr('y', -18)
-    .text(d => d.data.label);
+    .attr('y', -20)
+    .text(d => truncate(d.data.label, 28));
 
   nodeEnter.append('text')
     .attr('class', 'ref')
-    .attr('y', -7)
+    .attr('y', -8)
     .text(d => d.data.reference || '');
 
   const nodeUpdate = nodeEnter.merge(node);
 
-  nodeUpdate.transition().duration(400)
-    .attr('transform', d => `translate(${d.x + startX},${d.y + startY})`)
+  nodeUpdate.transition().duration(350)
+    .attr('transform', d => {
+      const pos = getPos(d);
+      return `translate(${pos.x},${pos.y})`;
+    })
     .attr('class', d => `node ${nodeClass(d)} ${d._children ? 'collapsed' : ''}`);
 
-  node.exit().transition().duration(400)
-    .attr('transform', `translate(${source.x + startX},${source.y + startY})`)
+  node.exit().transition().duration(350)
+    .attr('transform', () => {
+      const o = getPos(source);
+      return `translate(${o.x},${o.y})`;
+    })
     .remove();
 
-  // Save positions for animation origin
   nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
 }
 
-function loadDataset(url) {
-  d3.json(url).then(data => {
-    root = d3.hierarchy(data);
-    root.x0 = width / 2;
-    root.y0 = height * 0.85;
-    // Start with all nodes expanded
-    root.each(d => {
-      d._children = null;
-    });
-    g.selectAll('*').remove();
-    update(root);
-  });
-}
-
-// Datasets embedded inline so the file works without a local server
 const DATASETS = {
   'genesis_1': {"id":"root","label":"In the Beginning","reference":"Genesis 1:1","type":"divine","decision":"God creates the heavens and the earth","immediate_fruit":"The cosmos exists — formless, empty, dark, with the Spirit hovering over the waters","long_term_fruit":"Every subsequent decision has a stage to act upon","children":[{"id":"day1","label":"Day 1","reference":"Genesis 1:3–5","type":"divine","decision":"Let there be light","immediate_fruit":"Light exists; God sees that it is good; light and darkness separated","long_term_fruit":"Vision, photosynthesis, the rhythm of day and night, the measurement of time","children":[{"id":"day1_naming","label":"Light → Day / Darkness → Night","reference":"Genesis 1:5","type":"divine","decision":"God names the light Day and the darkness Night","immediate_fruit":"Language enters creation — naming as an act of sovereignty","long_term_fruit":"The pattern of naming-as-dominion; Adam will be invited to continue it","children":[]}]},{"id":"day2","label":"Day 2","reference":"Genesis 1:6–8","type":"divine","decision":"Let there be an expanse to separate the waters above from the waters below","immediate_fruit":"The atmosphere exists; sky and sea separated","long_term_fruit":"Weather, clouds, rain, the water cycle — all life's hydration depends on this separation","children":[{"id":"day2_naming","label":"Expanse → Heaven","reference":"Genesis 1:8","type":"divine","decision":"God names the expanse Heaven","immediate_fruit":"The sky is given identity","long_term_fruit":"Heaven as a concept — both physical and theological; the dwelling place language begins here","children":[]}]},{"id":"day3","label":"Day 3","reference":"Genesis 1:9–13","type":"divine","decision":"Let the waters be gathered; let dry land appear","immediate_fruit":"Seas and dry earth exist; God sees that it is good","long_term_fruit":"The foundation for every land creature, every civilization, every city","children":[{"id":"day3_naming","label":"Dry land → Earth / Waters → Seas","reference":"Genesis 1:10","type":"divine","decision":"God names the dry land Earth and the gathered waters Seas","immediate_fruit":"Geography is named into existence","long_term_fruit":"The named world becomes navigable, mappable, habitable","children":[]},{"id":"day3_vegetation","label":"Let the earth bring forth vegetation","reference":"Genesis 1:11–12","type":"divine","decision":"Let the earth sprout vegetation — plants yielding seed, trees bearing fruit","immediate_fruit":"All plant life exists; God sees that it is good","long_term_fruit":"Food, medicine, oxygen, wood, fiber — the biological foundation of every human civilization","children":[]}]},{"id":"day4","label":"Day 4","reference":"Genesis 1:14–19","type":"divine","decision":"Let there be lights in the expanse to separate day from night; signs for seasons, days, years","immediate_fruit":"Sun, moon, and stars exist; God sees that it is good","long_term_fruit":"Agriculture (planting seasons), navigation, calendars, worship calendars, the Sabbath cycle","children":[{"id":"day4_dominion","label":"Lights to govern day and night","reference":"Genesis 1:16–18","type":"divine","decision":"God makes two great lights — the greater to govern the day, the lesser to govern the night — and the stars","immediate_fruit":"The sun and moon are given governance roles — the first delegated authority in creation","long_term_fruit":"The pattern of delegated rule that will extend to humanity in Day 6","children":[]}]},{"id":"day5","label":"Day 5","reference":"Genesis 1:20–23","type":"divine","decision":"Let the waters swarm with living creatures; let birds fly above the earth","immediate_fruit":"Sea creatures and birds exist; God sees that it is good","long_term_fruit":"Animal life; the ocean ecosystem; birds as pollinators and seed-spreaders","children":[{"id":"day5_blessing","label":"First Blessing: Be fruitful and multiply","reference":"Genesis 1:22","type":"divine","decision":"God blesses them: Be fruitful and multiply, fill the waters and the earth","immediate_fruit":"The first blessing in Scripture — authority and commission given to creatures","long_term_fruit":"Biological multiplication; the pattern of blessing-as-commissioning that will reach humanity and Abraham","children":[]}]},{"id":"day6","label":"Day 6","reference":"Genesis 1:24–31","type":"divine","decision":"Let the earth bring forth living creatures — livestock, creeping things, beasts of the earth","immediate_fruit":"Land animals exist; God sees that it is good","long_term_fruit":"Domestication, agriculture, the animal kingdom as context for human civilization","children":[{"id":"day6_mankind","label":"Let us make man in our image","reference":"Genesis 1:26","type":"divine","decision":"God decides to make mankind in His image and likeness, to have dominion over every living thing","immediate_fruit":"Humanity exists — male and female; God sees that it is very good","long_term_fruit":"Every human being who has ever lived; language, culture, civilization, redemption history","children":[{"id":"day6_blessing","label":"Second Blessing + Dominion Commission","reference":"Genesis 1:28","type":"divine","decision":"God blesses them: Be fruitful and multiply, fill the earth, subdue it, have dominion","immediate_fruit":"Humanity is commissioned — not just blessed to multiply but given authority to steward creation","long_term_fruit":"All of human history; stewardship and dominion become the framework for every human decision that follows","children":[]},{"id":"day6_food","label":"Every plant is given for food","reference":"Genesis 1:29–30","type":"divine","decision":"God gives every seed-bearing plant and fruit tree to mankind and every green plant to animals","immediate_fruit":"Provision established — no scarcity in the original design","long_term_fruit":"The original diet; the context against which the forbidden tree will be placed; abundance as the baseline","children":[]}]}]},{"id":"day7","label":"Day 7","reference":"Genesis 2:1–3","type":"divine","decision":"God chooses to rest on the seventh day from all His work","immediate_fruit":"Rest enters creation — not because God was exhausted (Isaiah 40:28 rules that out), but as a sovereign act of completion: work finished, a boundary drawn","long_term_fruit":"The six-plus-one rhythm woven into time itself; the category of rest as something distinct from sleep or inactivity — a chosen cessation","children":[{"id":"day7_blessing","label":"Seventh Day Blessed and Sanctified","reference":"Genesis 2:3","type":"divine","decision":"God blesses the seventh day and sanctifies it — sets it apart as holy because He rested on it","immediate_fruit":"The first holy TIME in Scripture; holiness extends beyond objects and places into the fabric of time itself","long_term_fruit":"The Sabbath commandment (Exodus 20:8–11 explicitly grounds it here); the sabbatical year (Leviticus 25); the Year of Jubilee; Hebrews 4 (the rest that remains for the people of God); the eschatological Sabbath rest","children":[]}]}]}
 };
@@ -398,9 +384,10 @@ const DATASETS = {
 function loadDataset(key) {
   const data = DATASETS[key];
   if (!data) return;
+  Object.keys(dragOffsets).forEach(k => delete dragOffsets[k]);
   root = d3.hierarchy(data);
   root.x0 = width / 2;
-  root.y0 = height * 0.85;
+  root.y0 = currentStartY;
   g.selectAll('*').remove();
   update(root);
 }
