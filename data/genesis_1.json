@@ -225,6 +225,164 @@
                               "immediate_fruit": "Death is named as a real possibility — something not part of the original creation now stands as the consequence of broken trust",
                               "long_term_fruit": "The death that follows in Genesis 3 is both immediate (spiritual separation from God) and eventual (physical); Paul's argument in Romans 5–6 rests entirely on this moment; 'the wages of sin is death'",
                               "children": []
+                            },
+                            {
+                              "id": "gen3_serpent",
+                              "label": "The serpent questions God's word",
+                              "reference": "Genesis 3:1–5",
+                              "type": "adversary",
+                              "decision": "The serpent approaches Eve and attacks the command: first distorting it ('hath God said, ye shall not eat of every tree?'), then flatly contradicting it ('ye shall not surely die'), then offering a rival account of God's motive",
+                              "immediate_fruit": "God's word is placed in question; the command is reframed as oppression rather than provision; desire is awakened for what was prohibited",
+                              "long_term_fruit": "The pattern of all temptation: question the word, deny the consequence, offer a better story; 'the father of lies' (John 8:44); 'the accuser of the brethren' (Rev 12:10); Jesus will face the same three-part attack in the wilderness (Matthew 4) and will not yield",
+                              "children": [
+                                {
+                                  "id": "gen3_eve_decides",
+                                  "label": "Eve sees, desires, takes, and eats",
+                                  "reference": "Genesis 3:6a",
+                                  "type": "human",
+                                  "decision": "Eve perceives the tree as good for food, pleasant to the eyes, and desirable for wisdom — then takes the fruit and eats",
+                                  "immediate_fruit": "The first human disobedience; the command is broken; the boundary God established is crossed",
+                                  "long_term_fruit": "1 John 2:16 names the pattern: lust of the flesh, lust of the eyes, pride of life — the same three elements Eve saw in the tree; Jesus is tempted by all three in the wilderness and overcomes each one",
+                                  "children": [
+                                    {
+                                      "id": "gen3_adam_silent_eats",
+                                      "label": "Adam eats — present, silent, unresisting",
+                                      "reference": "Genesis 3:6b",
+                                      "type": "human",
+                                      "decision": "Eve gives the fruit to Adam 'who was with her' — and he eats. No deception is recorded. No serpent came to him. He had dominion over every creature (Gen 1:28) and a charge to keep the garden (Gen 2:15), and he chose silence.",
+                                      "immediate_fruit": "The representative man falls — and with him, all of humanity; the dominion mandate is abdicated at the moment it was most needed",
+                                      "long_term_fruit": "Romans 5:12 — 'by one man sin entered into the world, and death by sin'; Adam's failure is the theological ground for Christ as the last Adam (1 Cor 15:45) who succeeds where Adam failed; the silence becomes the loudest moment in human history",
+                                      "children": [
+                                        {
+                                          "id": "gen3_cover",
+                                          "label": "They cover themselves with fig leaves",
+                                          "reference": "Genesis 3:7",
+                                          "type": "human",
+                                          "decision": "Their eyes are opened — not to godlike wisdom as promised, but to shame; they sew fig leaves together to cover their nakedness",
+                                          "immediate_fruit": "Self-made covering; shame enters creation; the union of human and holy is broken",
+                                          "long_term_fruit": "The fig leaf becomes the symbol of all human attempts at self-justification; religion, morality, performance as strategies to cover what sin uncovers; only God's provision can cover what man cannot",
+                                          "children": [
+                                            {
+                                              "id": "gen3_hide",
+                                              "label": "They hide from God",
+                                              "reference": "Genesis 3:8",
+                                              "type": "human",
+                                              "decision": "Adam and his wife hear God walking in the garden and hide among the trees — the first instinct of the fallen is to hide from the Creator",
+                                              "immediate_fruit": "The relationship that walked in openness now requires hiding; fear replaces communion",
+                                              "long_term_fruit": "The hiding continues in every human life; the Gospel is the end of needing to hide; 'perfect love casts out fear' (1 John 4:18)",
+                                              "children": [
+                                                {
+                                                  "id": "gen3_god_seeks",
+                                                  "label": "God calls: Where art thou?",
+                                                  "reference": "Genesis 3:9",
+                                                  "type": "divine",
+                                                  "decision": "God calls out to the hiding Adam — not from ignorance but from grace; the first instance of God pursuing the fallen before pronouncing judgment",
+                                                  "immediate_fruit": "God seeks before He judges; the question is an invitation to confession, not an announcement of abandonment",
+                                                  "long_term_fruit": "The entire arc of redemption is embedded in this question: the lost sheep, the prodigal son, 'the Son of Man came to seek and to save that which was lost' (Luke 19:10); God's first response to the fall is pursuit",
+                                                  "children": [
+                                                    {
+                                                      "id": "gen3_adam_blames",
+                                                      "label": "Adam blames Eve — and God",
+                                                      "reference": "Genesis 3:12",
+                                                      "type": "human",
+                                                      "decision": "Adam answers: 'The woman whom thou gavest to be with me, she gave me of the tree, and I did eat' — blaming Eve and implicitly blaming God who gave her",
+                                                      "immediate_fruit": "The covenant of recognition ('bone of my bones') collapses into blame; the first human deflection before God",
+                                                      "long_term_fruit": "The pattern of deflection and blame that runs through all human history; the refusal to bear responsibility is a second failure layered on the first",
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "id": "gen3_eve_blames",
+                                                      "label": "Eve blames the serpent",
+                                                      "reference": "Genesis 3:13",
+                                                      "type": "human",
+                                                      "decision": "Eve answers: 'The serpent beguiled me, and I did eat' — true as far as it goes, but still a deflection from personal responsibility",
+                                                      "immediate_fruit": "The chain of blame circles back without resolution; no one owns the decision",
+                                                      "long_term_fruit": "Human accountability before God cannot be fully transferred; the serpent deceived, but Eve chose; the New Testament holds both truths (1 Tim 2:14; 2 Cor 11:3)",
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "id": "gen3_judgment_serpent",
+                                                      "label": "Serpent cursed above all creatures",
+                                                      "reference": "Genesis 3:14",
+                                                      "type": "divine",
+                                                      "decision": "God curses the serpent above all creatures — no interrogation, no opportunity to deflect; the judgment is immediate and total",
+                                                      "immediate_fruit": "The creature that spoke with cunning is brought low; enmity declared between serpent and woman",
+                                                      "long_term_fruit": "The defeat of Satan is announced before the consequences of sin fully land; the serpent's judgment frames everything that follows",
+                                                      "children": [
+                                                        {
+                                                          "id": "gen3_protoevangelium",
+                                                          "label": "Seed of woman will crush the serpent's head",
+                                                          "reference": "Genesis 3:15",
+                                                          "type": "promise-good",
+                                                          "decision": "God declares: enmity between the serpent's seed and the woman's seed; the seed of the woman will bruise the serpent's head — the serpent will bruise his heel",
+                                                          "immediate_fruit": "The first gospel promise in Scripture — redemption announced in the same breath as judgment; the serpent's ultimate defeat is declared before Adam and Eve leave the garden",
+                                                          "long_term_fruit": "The entire Bible is the unfolding of this one sentence: the Messiah's lineage (seed of the woman), the Incarnation, Gethsemane, the cross (the heel bruised), the resurrection (the head crushed); Revelation 20:10 is its fulfillment",
+                                                          "children": [
+                                                            {
+                                                              "id": "gen3_adam_names_eve",
+                                                              "label": "Adam names her Eve: mother of all living",
+                                                              "reference": "Genesis 3:20",
+                                                              "type": "human",
+                                                              "decision": "Adam names his wife Eve — meaning 'life' — because she would be the mother of all living. He does this after the death sentence has been pronounced, in response to the promise of the coming seed.",
+                                                              "immediate_fruit": "An act of faith in the face of judgment; Adam believes the promise of Gen 3:15 before leaving the garden; the name itself is a confession of hope",
+                                                              "long_term_fruit": "Faith as the response to divine promise even under judgment; the pattern of Abraham who 'against hope believed in hope' (Romans 4:18); the third time Adam names a living thing — and the most costly",
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "id": "gen3_judgment_eve",
+                                                      "label": "Eve's judgment: sorrow and desire",
+                                                      "reference": "Genesis 3:16",
+                                                      "type": "divine",
+                                                      "decision": "God multiplies sorrow in Eve's conception and childbirth; declares that her desire will be for her husband and he will rule over her",
+                                                      "immediate_fruit": "The relationship of equals in Genesis 2 becomes complicated by the fall; the act of bringing life is now marked by pain",
+                                                      "long_term_fruit": "The tension between headship and mutuality in marriage traces here; the Gospel begins to restore what the fall corrupted; Galatians 3:28",
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "id": "gen3_judgment_adam",
+                                                      "label": "Adam's judgment: cursed ground, toil, death",
+                                                      "reference": "Genesis 3:17–19",
+                                                      "type": "divine",
+                                                      "decision": "God curses the ground for Adam's sake; thorns and thistles; bread by the sweat of the face; 'for dust thou art, and unto dust shalt thou return'",
+                                                      "immediate_fruit": "The vocation that was joyful becomes laborious; the provision that was abundant becomes scarce; physical death becomes certain",
+                                                      "long_term_fruit": "All human suffering under toil and death traces here; the resurrection reverses the death sentence; the new creation reverses the curse (Revelation 22:3 — 'no more curse')",
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "id": "gen3_god_clothes",
+                                                      "label": "God makes garments of skin",
+                                                      "reference": "Genesis 3:21",
+                                                      "type": "divine",
+                                                      "decision": "God makes coats of skin for Adam and his wife and clothes them — replacing the fig leaves with a covering that requires the death of an animal",
+                                                      "immediate_fruit": "The first animal death in Scripture; the first sacrifice — blood is shed so that the fallen can be covered; God provides what man's self-made covering cannot",
+                                                      "long_term_fruit": "The entire sacrificial system prefigured here; the Lamb of God who takes away the sin of the world is in seed form in this act; God's covering always comes at the cost of innocent life",
+                                                      "children": []
+                                                    },
+                                                    {
+                                                      "id": "gen3_banishment",
+                                                      "label": "Expelled from Eden; Tree of Life guarded",
+                                                      "reference": "Genesis 3:22–24",
+                                                      "type": "divine",
+                                                      "decision": "God sends Adam and Eve out of Eden and places cherubim with a flaming sword to guard the way to the Tree of Life",
+                                                      "immediate_fruit": "The garden is closed; access to eternal life in a fallen state is cut off — which is itself a mercy (fallen humanity living forever unredeemed would be endless ruin)",
+                                                      "long_term_fruit": "The exile from Eden is the condition of all human history until Revelation 22; the entire biblical story is the journey back to the garden — and beyond it; the Tree of Life reappears in the New Jerusalem, its leaves for the healing of the nations",
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
                             }
                           ]
                         }
