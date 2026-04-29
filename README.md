@@ -16,13 +16,13 @@ The visualization is built with D3.js: dark background, upward-growing branches,
 
 Our first mapping project is the entire Bible — worked through passage by passage, from Genesis forward.
 
-**Genesis 1** is the starting point. The first chapter contains no human decisions at all — it is a pure cascade of divine choices, each one creating the substrate for the next. When the first human decision arrives in Chapter 3, it will land with full visual weight against that gold background. The tree will make visible what biblical commentary rarely shows in this form.
+**Genesis 1** is the starting point. The first chapter contains no human decisions at all — it is a pure cascade of divine choices, each one creating the substrate for the next. When the first human decision arrives in Chapter 3, it lands with full visual weight against that gold background. The tree makes visible what biblical commentary rarely shows in this form.
 
 **Live visualization:** [https://jkh2.github.io/tree-of-decisions/](https://jkh2.github.io/tree-of-decisions/)
 
 ## Progress
 
-**76 nodes mapped across Genesis 1–7**
+**89 nodes mapped across Genesis 1–9**
 
 | Chapter | Scope | Nodes | Status |
 |---------|-------|-------|--------|
@@ -33,7 +33,9 @@ Our first mapping project is the entire Bible — worked through passage by pass
 | Genesis 5 | Image persists in Seth's line, death refrain, Enoch translated, Noah named | 4 | ✅ Complete |
 | Genesis 6 | Corruption total, God grieves, flood decree, Noah's grace, ark instructions, obedience | 8 | ✅ Complete |
 | Genesis 7 | Come into the ark, uncreation, all flesh died, Noah remains, 150 days | 5 | ✅ Complete |
-| Genesis 8–9 | Waters recede, raven/dove, altar, Noahic covenant | — | 🔜 Next |
+| Genesis 8 | God remembers Noah, waters recede, dove, God commands exit, altar, sweet savor | 6 | ✅ Complete |
+| Genesis 9 | New commission, blood law, Noahic covenant, rainbow sign, vineyard failure, Ham, curse/blessing | 7 | ✅ Complete |
+| Genesis 10–11 | Table of Nations, Babel | — | 🔜 Next |
 
 **Node types in use:**
 - 🟡 Gold — God's decisions
