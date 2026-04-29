@@ -20,6 +20,27 @@ Our first mapping project is the entire Bible — worked through passage by pass
 
 **Live visualization:** [https://jkh2.github.io/tree-of-decisions/](https://jkh2.github.io/tree-of-decisions/)
 
+## Progress
+
+**59 nodes mapped across Genesis 1–4**
+
+| Chapter | Scope | Nodes | Status |
+|---------|-------|-------|--------|
+| Genesis 1 | The Creation Week — Days 1–7, naming, blessings, dominion commission | 13 | ✅ Complete |
+| Genesis 2 | Garden, vocation, first command, woman, marriage covenant | 18 | ✅ Complete |
+| Genesis 3 | Serpent, the Fall, judgments, Protoevangelium, garments, banishment | 15 | ✅ Complete |
+| Genesis 4 | Cain and Abel, God's warning, murder, pursuit, mercy on Cain, Seth, first worship | 13 | ✅ Complete |
+| Genesis 5–9 | Genealogies, Noah, the Flood | — | 🔜 Next |
+
+**Node types in use:**
+- 🟡 Gold — God's decisions
+- 🔵 Blue — Human decisions
+- 🟢 Green — Commands
+- 🟣 Purple — Blessings
+- 🩵 Teal — Promises (good)
+- 🟠 Orange — Promises (warning)
+- 🔴 Dark red — Adversary
+
 ## Data Format
 
 Decision data lives in `data/` as JSON files. Each file maps a passage or chapter. The schema:
