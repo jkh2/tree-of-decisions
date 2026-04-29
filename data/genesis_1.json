@@ -169,18 +169,18 @@
       "label": "Day 7",
       "reference": "Genesis 2:1–3",
       "type": "divine",
-      "decision": "God rests on the seventh day from all His work",
-      "immediate_fruit": "The first rest — God stops creating",
-      "long_term_fruit": "The Sabbath; holiness of time itself; the pattern of work and rest written into creation's fabric",
+      "decision": "God chooses to rest on the seventh day from all His work",
+      "immediate_fruit": "Rest enters creation — not because God was exhausted (Isaiah 40:28 rules that out), but as a sovereign act of completion: work finished, a boundary drawn",
+      "long_term_fruit": "The six-plus-one rhythm woven into time itself; the category of rest as something distinct from sleep or inactivity — a chosen cessation",
       "children": [
         {
           "id": "day7_blessing",
-          "label": "Seventh Day Blessed and Made Holy",
+          "label": "Seventh Day Blessed and Sanctified",
           "reference": "Genesis 2:3",
           "type": "divine",
-          "decision": "God blesses the seventh day and makes it holy — because on it He rested from all His work",
-          "immediate_fruit": "The only decision in Genesis 1–2 whose fruit is not material but sacred: time itself is consecrated",
-          "long_term_fruit": "The Sabbath commandment; Hebrews 4 (the rest that remains); the eschatological rest; worship rhythm across all of Scripture",
+          "decision": "God blesses the seventh day and sanctifies it — sets it apart as holy because He rested on it",
+          "immediate_fruit": "The first holy TIME in Scripture; holiness extends beyond objects and places into the fabric of time itself",
+          "long_term_fruit": "The Sabbath commandment (Exodus 20:8–11 explicitly grounds it here); the sabbatical year (Leviticus 25); the Year of Jubilee; Hebrews 4 (the rest that remains for the people of God); the eschatological Sabbath rest",
           "children": []
         }
       ]
