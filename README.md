@@ -2,6 +2,16 @@
 
 A decision-mapping tool built around a simple idea: every significant decision has fruit — consequences that ripple forward in time, some immediate and some long-term. This project visualizes those decisions and their fruit as an interactive tree, with each node linked to the decisions that made it possible.
 
+## Status & Disclaimer
+
+**This is a work in progress.** The mapping is incomplete, may contain errors, and may be misleading in places. Every decision about how to represent a passage involves interpretation — and some of those calls will be wrong.
+
+**Always trust your physical Bible over this tool.** The app is an aid to reflection, not a replacement for Scripture. If something in the visualization conflicts with what you read in the text, the text wins. Check your own Bible, check commentaries, consult your community.
+
+This project is experimental — an attempt to apply a decision-mapping engine to one of the largest and most consequential datasets in human history. Treat it accordingly: useful, worth exploring, but not authoritative.
+
+---
+
 ## What It Is
 
 Decisions are nodes. Fruit flows downward. The tree shows how choices create the conditions for future choices — and how consequences compound over time.
@@ -66,6 +76,25 @@ Decision data lives in `data/` as JSON files. Each file maps a passage or chapte
 ## Running Locally
 
 Open `index.html` directly in a browser — no server required. Data is embedded inline.
+
+## About the Engine
+
+The **Tree of Decisions** is two separate things:
+
+1. **The engine** — a decision-mapping framework for visualizing choices and their downstream consequences. Decisions become nodes. Fruit flows forward. The visualization renders the full causal chain.
+
+2. **This project** — one specific application of that engine: mapping the Bible.
+
+These are separable. The engine is general-purpose. The Bible mapping is one dataset applied to it.
+
+Other applications of the same engine:
+- **War-game and tabletop exercises** — map the decision tree of a historical battle, a political crisis, or a scenario. Simulate branches. See where choices compound.
+- **Organizational decisions** — map how a company's strategic calls created the conditions for its current state.
+- **Personal decisions** — the "fruit of decisions" reflection practice that originated this project.
+
+If you're interested in the engine itself for a different application, the architecture is documented in the data schema and visualization code. A standalone engine repository is planned.
+
+---
 
 ## Built With
 
